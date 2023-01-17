@@ -1,0 +1,8 @@
+.scroll {
+    height: 470px;
+    width: 80%;
+    overflow-x: scroll;
+    padding: 8px;
+    display: flex;
+    margin: auto;
+}

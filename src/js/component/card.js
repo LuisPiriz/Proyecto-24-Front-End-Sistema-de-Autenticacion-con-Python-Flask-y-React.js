@@ -9,7 +9,7 @@ export const Card = (props) => {
         <img src="https://lumiere-a.akamaihd.net/v1/images/header-starwars-mobile-01_2b709a38.jpeg?region=0,0,640,400" className="card-img-top" alt="..." />
         <div className="card-body">
           {/* <h5 className="card-title">{props.title}</h5> */}
-          <h5 className="card-title">Luke Skywalker</h5>
+          <h5 className="card-title">{props.nombre}</h5>
           <ul className="list-group list-group-flush">
             <li className="list-group-item">Gender: {props.gender}</li>
             <li className="list-group-item">Hair color: {props.hair}</li>

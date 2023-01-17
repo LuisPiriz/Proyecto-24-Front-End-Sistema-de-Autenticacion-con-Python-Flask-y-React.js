@@ -1,17 +1,23 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
-import { Card } from "./card";
-
-export const Vehicles = () => {
+export const Vehicles = (props) => {
   return (
-    <>
-    <div>
-        <h1>Vehicles</h1>
+    <div className="">
+    <div className="card mx-3" style={{height: 440, width: 350}}>
+      {/* <img src={props.imageUrl} className="card-img-top" alt="..." /> */}
+      <img src="https://lumiere-a.akamaihd.net/v1/images/header-starwars-mobile-01_2b709a38.jpeg?region=0,0,640,400" className="card-img-top" alt="..." />
+      <div className="card-body">
+        <h5 className="card-title">{props.nombre}</h5>
+        <ul className="list-group list-group-flush">
+          <li className="list-group-item">Gender: {props.gender}</li>
+          <li className="list-group-item">Hair color: {props.hair}</li>
+          <li className="list-group-item">Eye-color: {props.eye}</li>
+        </ul>
+        <Link to={"/single/"+props.id} type="button" className="btn btn-outline-primary">Learn more</Link>
+        <button type="button" className="btn btn-outline-warning float-end"><i className="fa fa-heart"></i></button>
+      </div>
     </div>
-    <div className="row row-cols-1 row-cols-md-2 g-4">
-        {/* <Card imageUrl="https://i.blogs.es/1da08b/1366_2000-9-/1366_2000.jpeg" title="Luke Skywalker" gender="male" hair="brown" eye="blue"/> */}
-        <Card/>
-    </div>
-    </>
+  </div>
   )
 }

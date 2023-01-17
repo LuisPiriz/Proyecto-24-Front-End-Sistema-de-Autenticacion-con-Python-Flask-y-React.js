@@ -5,14 +5,14 @@ export const Navbar = () => {
   return (
     <nav className="navbar bg-light">
       <div className="container">
-        <a className="navbar-brand" href="#">
+        <Link className="navbar-brand" to="/">
           <img
             src="https://i.pinimg.com/originals/b4/b5/fd/b4b5fdf7bf06601ad4bd1cc6f73acff3.png"
             alt="Bootstrap"
             width="60"
             height="60"
           />
-        </a>
+        </Link>
         <div className="dropdown">
           <button
             className="btn btn-warning dropdown-toggle"
