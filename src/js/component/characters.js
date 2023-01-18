@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { Link } from "react-router-dom";
 
+import { Context } from "../store/appContext";
+
 export const Characters = (props) => {
+
+  const { actions } = useContext(Context);
+
   return (
     <div className="">
-      <div className="card mx-3" style={{height: 440, width: 350}}>
-        {/* <img src={props.imageUrl} className="card-img-top" alt="..." /> */}
-        <img src="https://lumiere-a.akamaihd.net/v1/images/header-starwars-mobile-01_2b709a38.jpeg?region=0,0,640,400" className="card-img-top" alt="..." />
+      <div className="card mx-3" style={{height: "auto", width: 350}}>
+        <img src={`https://starwars-visualguide.com/assets/img/characters/${props.id}.jpg`} className="card-img-top" alt="..." />
         <div className="card-body">
           <h5 className="card-title">{props.nombre}</h5>
           <ul className="list-group list-group-flush">
@@ -15,7 +19,7 @@ export const Characters = (props) => {
             <li className="list-group-item">Eye-color: {props.ojos}</li>
           </ul>
           <Link to={"/single/"+props.id} type="button" className="btn btn-outline-primary">Learn more</Link>
-          <button type="button" className="btn btn-outline-warning float-end"><i className="fa fa-heart"></i></button>
+          <button type="button" onClick={actions.agregarFavorito} className="btn btn-outline-warning float-end"><i className="fa fa-heart"></i></button>
         </div>
       </div>
     </div>

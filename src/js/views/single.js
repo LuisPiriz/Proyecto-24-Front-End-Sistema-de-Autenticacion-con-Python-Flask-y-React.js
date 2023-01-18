@@ -7,11 +7,9 @@ export const Single = (props) => {
   const { store, actions } = useContext(Context);
   const params = useParams();
 
-  const [personajes2, setPersonajes2] = useState({});
-  const [planetas2, setPlanetas2] = useState({});
-  const [vehiculos2, setVehiculos2] = useState({});
+  console.log(store.personajes);
 
-//   Imágenes: https://starwars-visualguide.com/assets/img/characters/id.jpg
+  const [personajes2, setPersonajes2] = useState({});
 
   function getInfoCharacters() {
     fetch("https://www.swapi.tech/api/people/"+params.theid)
@@ -19,24 +17,16 @@ export const Single = (props) => {
       .then((data) => setPersonajes2(data.result.properties))
       .catch((err) => console.error(err));
   }
-//   function getInfoPlanets() {
-//     fetch("https://www.swapi.tech/api/planets/"+params.theid)
-//       .then((res) => res.json())
-//       .then((data) => console.log(data))
-//       .catch((err) => console.error(err));
-//   }
-//   console.log(params.theid)
 
   useEffect(() => {
     getInfoCharacters();
-	// getInfoPlanets();
   }, []);
 
   return (
     <div className="container mt-4">
 		<div className="d-flex">
         <img
-          src="https://lumiere-a.akamaihd.net/v1/images/header-starwars-mobile-01_2b709a38.jpeg?region=0,0,640,400"
+          src={`https://starwars-visualguide.com/assets/img/characters/${params.theid}.jpg`}
           height={"300"}
           width={"auto"}
           alt=""

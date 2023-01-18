@@ -3,35 +3,35 @@ import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-export const Single2 = (props) => {
+export const Single3 = (props) => {
   const { store, actions } = useContext(Context);
   const params = useParams();
 
-  const [planetas2, setPlanetas2] = useState({});
+  const [vehiculos2, setVehiculos2] = useState({});
 
-  function getInfoPlanets() {
-    fetch("https://www.swapi.tech/api/planets/"+params.theid)
+  function getInfoVehicles() {
+    fetch("https://www.swapi.tech/api/vehicles/"+params.theid)
       .then((res) => res.json())
-      .then((data) => setPlanetas2(data.result.properties))
+      .then((data) => setVehiculos2(data.result.properties))
       .catch((err) => console.error(err));
   }
 
   useEffect(() => {
-	getInfoPlanets();
+	getInfoVehicles();
   }, []);
 
   return (
     <div className="container mt-4">
 		<div className="d-flex">
         <img
-          src={params.theid === "1" ? `https://oyster.ignimgs.com/mediawiki/apis.ign.com/star-wars-episode-7/4/4b/Tatooine-3.jpg` :`https://starwars-visualguide.com/assets/img/planets/${params.theid}.jpg`}
+          src={`https://starwars-visualguide.com/assets/img/vehicles/${params.theid}.jpg`}
           height={"300"}
           width={"auto"}
           alt=""
         />
         <div className="text-center ms-3">
           <h1 className="text-center">
-			{planetas2.name}
+			{vehiculos2.name}
           </h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
@@ -46,27 +46,27 @@ export const Single2 = (props) => {
         <div className="d-flex mt-2 text-danger">
           <div className="col-2 text-center">
             <p><strong>Name</strong></p>
-			<p>{planetas2.name}</p>
+			<p>{vehiculos2.name}</p>
           </div>
           <div className="col-2 text-center">
-            <p><strong>Climate</strong></p>
-			<p>{planetas2.climate}</p>
+            <p><strong>Cargo Capacity</strong></p>
+			<p>{vehiculos2.cargo_capacity}</p>
           </div>
           <div className="col-2 text-center">
-            <p><strong>Population</strong></p>
-			<p>{planetas2.population}</p>
+            <p><strong>Crew</strong></p>
+			<p>{vehiculos2.crew}</p>
           </div>
           <div className="col-2 text-center">
-            <p><strong>Orbital Period</strong></p>
-			<p>{planetas2.orbital_period}</p>
+            <p><strong>Length</strong></p>
+			<p>{vehiculos2.length}</p>
           </div>
           <div className="col-2 text-center">
-            <p><strong>Rotation Period</strong></p>
-			<p>{planetas2.rotation_period}</p>
+            <p><strong>Model</strong></p>
+			<p>{vehiculos2.model}</p>
           </div>
           <div className="col-2 text-center">
-            <p><strong>Diameter</strong></p>
-			<p>{planetas2.diameter}</p>
+            <p><strong>Passengers</strong></p>
+			<p>{vehiculos2.passengers}</p>
           </div>
         </div>
       </div>
@@ -74,6 +74,6 @@ export const Single2 = (props) => {
   );
 };
 
-Single2.propTypes = {
+Single3.propTypes = {
   match: PropTypes.object,
 };

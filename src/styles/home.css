@@ -1,5 +1,5 @@
 .scroll {
-    height: 470px;
+    height: auto;
     width: 80%;
     overflow-x: scroll;
     padding: 8px;
