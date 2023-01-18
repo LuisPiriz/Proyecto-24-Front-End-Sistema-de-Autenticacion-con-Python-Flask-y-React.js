@@ -5,7 +5,10 @@ import { Context } from "../store/appContext";
 
 export const Characters = (props) => {
 
-  const { actions } = useContext(Context);
+  const { store, actions } = useContext(Context);
+ 
+  // console.log(store.personajes)
+  console.log(store.personajes)
 
   return (
     <div className="">
@@ -14,7 +17,7 @@ export const Characters = (props) => {
         <div className="card-body">
           <h5 className="card-title">{props.nombre}</h5>
           <ul className="list-group list-group-flush">
-            <li className="list-group-item">Gender: {props.genero}</li>
+            <li className="list-group-item">Gender: {store.personajes.gender}</li>
             <li className="list-group-item">Hair color: {props.pelo}</li>
             <li className="list-group-item">Eye-color: {props.ojos}</li>
           </ul>

@@ -17,9 +17,12 @@ const getState = ({
                 }
             ],
             personajes: [],
+            personajes2: {},
             planetas: [],
+            planetas2: {},
             vehiculos: [],
-            favoritos: []
+            vehiculos2: {},
+            favoritos: [],
         },
         actions: {
             // Use getActions to call a function within a fuction
@@ -49,9 +52,43 @@ const getState = ({
                     }))
                     .catch((err) => console.error(err));
             },
-            agregarFavorito: () => {
-
-                console.log("Funciona");
+            getInfoCharacters: (id) => {
+                fetch("https://www.swapi.tech/api/people/" + id)
+                    .then((res) => res.json())
+                    .then((data) => setStore({
+                        personajes2: data.result
+                    }))
+                    .catch((err) => console.error(err));
+            },
+            getInfoPlanets: (id) => {
+                fetch("https://www.swapi.tech/api/planets/" + id)
+                    .then((res) => res.json())
+                    .then((data) => setStore({
+                        planetas2: data.result
+                    }))
+                    .catch((err) => console.error(err));
+            },
+            getInfoVehicles: (id) => {
+                fetch("https://www.swapi.tech/api/vehicles/" + id)
+                    .then((res) => res.json())
+                    .then((data) => setStore({
+                        vehiculos2: data.result
+                    }))
+                    .catch((err) => console.error(err));
+            },
+            agregarFavorito: (e) => {
+                e.preventDefault()
+                const store = getStore()
+                setStore({
+                    favoritos: ([...store.favoritos, {"uid": store.personajes.uid, "name": "luke", "url": store.personajes.url}])
+                })
+				// setStore({
+                //     favoritos: ([...store.favoritos, {"name": store.personajes.name}])
+                // })
+				// setStore({
+				// 	    favoritos: store.personajes
+				// })
+                console.log(store.favoritos);
             },
             changeColor: (index, color) => {
                 //get the store

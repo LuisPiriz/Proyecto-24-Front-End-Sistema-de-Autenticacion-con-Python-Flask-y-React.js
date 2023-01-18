@@ -7,17 +7,16 @@ export const Single2 = (props) => {
   const { store, actions } = useContext(Context);
   const params = useParams();
 
-  const [planetas2, setPlanetas2] = useState({});
-
-  function getInfoPlanets() {
-    fetch("https://www.swapi.tech/api/planets/"+params.theid)
-      .then((res) => res.json())
-      .then((data) => setPlanetas2(data.result.properties))
-      .catch((err) => console.error(err));
-  }
+  // const [planetas2, setPlanetas2] = useState({});
+  // function getInfoPlanets() {
+  //   fetch("https://www.swapi.tech/api/planets/"+params.theid)
+  //     .then((res) => res.json())
+  //     .then((data) => setPlanetas2(data.result.properties))
+  //     .catch((err) => console.error(err));
+  // }
 
   useEffect(() => {
-	getInfoPlanets();
+	actions.getInfoPlanets(params.theid);
   }, []);
 
   return (
@@ -31,7 +30,7 @@ export const Single2 = (props) => {
         />
         <div className="text-center ms-3">
           <h1 className="text-center">
-			{planetas2.name}
+			{store.planetas2.properties?.name}
           </h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
@@ -46,27 +45,27 @@ export const Single2 = (props) => {
         <div className="d-flex mt-2 text-danger">
           <div className="col-2 text-center">
             <p><strong>Name</strong></p>
-			<p>{planetas2.name}</p>
+			<p>{store.planetas2.properties?.name}</p>
           </div>
           <div className="col-2 text-center">
             <p><strong>Climate</strong></p>
-			<p>{planetas2.climate}</p>
+			<p>{store.planetas2.properties?.climate}</p>
           </div>
           <div className="col-2 text-center">
             <p><strong>Population</strong></p>
-			<p>{planetas2.population}</p>
+			<p>{store.planetas2.properties?.population}</p>
           </div>
           <div className="col-2 text-center">
             <p><strong>Orbital Period</strong></p>
-			<p>{planetas2.orbital_period}</p>
+			<p>{store.planetas2.properties?.orbital_period}</p>
           </div>
           <div className="col-2 text-center">
             <p><strong>Rotation Period</strong></p>
-			<p>{planetas2.rotation_period}</p>
+			<p>{store.planetas2.properties?.rotation_period}</p>
           </div>
           <div className="col-2 text-center">
             <p><strong>Diameter</strong></p>
-			<p>{planetas2.diameter}</p>
+			<p>{store.planetas2.properties?.diameter}</p>
           </div>
         </div>
       </div>

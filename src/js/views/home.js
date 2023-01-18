@@ -4,6 +4,7 @@ import "../../styles/home.css";
 import { Characters } from "../component/characters";
 import { Planets } from "../component/planets.jsx";
 import { Vehicles } from "../component/vehicles.jsx";
+import { Navbar } from "../component/navbar";
 import { Context } from "../store/appContext";
 
 export const Home = () => {
@@ -13,14 +14,12 @@ export const Home = () => {
   // const [personajes, setPersonajes] = useState([]);
   // const [planetas, setPlanetas] = useState([]);
   // const [vehiculos, setVehiculos] = useState([]);
-
   // function getCharacters() {
   //   fetch("https://www.swapi.tech/api/people/")
   //     .then((res) => res.json())
   //     .then((data) => setPersonajes(data.results))
   //     .catch((err) => console.error(err));
   // }
-
   // function getPlanets() {
   //   fetch("https://www.swapi.tech/api/planets")
   //     .then((res) => res.json())
@@ -33,11 +32,11 @@ export const Home = () => {
   //     .then((data) => setVehiculos(data.results))
   //     .catch((err) => console.error(err));
   // }
-  useEffect(() => {
+  // useEffect(() => {
     // getCharacters();
     // getPlanets();
     // getVehicles();
-  }, []);
+  // }, []);
 
   return (
     <>

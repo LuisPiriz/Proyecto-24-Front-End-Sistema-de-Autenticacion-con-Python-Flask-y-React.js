@@ -7,17 +7,16 @@ export const Single3 = (props) => {
   const { store, actions } = useContext(Context);
   const params = useParams();
 
-  const [vehiculos2, setVehiculos2] = useState({});
-
-  function getInfoVehicles() {
-    fetch("https://www.swapi.tech/api/vehicles/"+params.theid)
-      .then((res) => res.json())
-      .then((data) => setVehiculos2(data.result.properties))
-      .catch((err) => console.error(err));
-  }
+  // const [vehiculos2, setVehiculos2] = useState({});
+  // function getInfoVehicles() {
+  //   fetch("https://www.swapi.tech/api/vehicles/"+params.theid)
+  //     .then((res) => res.json())
+  //     .then((data) => setVehiculos2(data.result.properties))
+  //     .catch((err) => console.error(err));
+  // }
 
   useEffect(() => {
-	getInfoVehicles();
+	actions.getInfoVehicles(params.theid);
   }, []);
 
   return (
@@ -31,7 +30,7 @@ export const Single3 = (props) => {
         />
         <div className="text-center ms-3">
           <h1 className="text-center">
-			{vehiculos2.name}
+			{store.vehiculos2.properties?.name}
           </h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
@@ -46,27 +45,27 @@ export const Single3 = (props) => {
         <div className="d-flex mt-2 text-danger">
           <div className="col-2 text-center">
             <p><strong>Name</strong></p>
-			<p>{vehiculos2.name}</p>
+			<p>{store.vehiculos2.properties?.name}</p>
           </div>
           <div className="col-2 text-center">
             <p><strong>Cargo Capacity</strong></p>
-			<p>{vehiculos2.cargo_capacity}</p>
+			<p>{store.vehiculos2.properties?.cargo_capacity}</p>
           </div>
           <div className="col-2 text-center">
             <p><strong>Crew</strong></p>
-			<p>{vehiculos2.crew}</p>
+			<p>{store.vehiculos2.properties?.crew}</p>
           </div>
           <div className="col-2 text-center">
             <p><strong>Length</strong></p>
-			<p>{vehiculos2.length}</p>
+			<p>{store.vehiculos2.properties?.length}</p>
           </div>
           <div className="col-2 text-center">
             <p><strong>Model</strong></p>
-			<p>{vehiculos2.model}</p>
+			<p>{store.vehiculos2.properties?.model}</p>
           </div>
           <div className="col-2 text-center">
             <p><strong>Passengers</strong></p>
-			<p>{vehiculos2.passengers}</p>
+			<p>{store.vehiculos2.properties?.passengers}</p>
           </div>
         </div>
       </div>

@@ -4,21 +4,21 @@ import { Link } from "react-router-dom";
 import { Characters } from "./characters";
 import { Context } from "../store/appContext";
 
-export const Navbar = () => {
+export const Navbar = (props) => {
 
   const { store } = useContext(Context);
-  console.log(store.favoritos);
+  // console.log(store.favoritos);
 
-  const [favoritos, setFavoritos] = useState([])
-  const [añadir, setAñadir] = useState("")
+  // const [favoritos, setFavoritos] = useState([])
+  // const [añadir, setAñadir] = useState("")
 
-  function addFavoritos(e) {
-		e.preventDefault()// detenemos el comportamiento predeterminado para procesar nuestro codigo
+  // function addFavoritos(e) {
+	// 	e.preventDefault()// detenemos el comportamiento predeterminado para procesar nuestro codigo
 	
-		setFavoritos(Favoritos.concat(añadir));
-		setAñadir("");
-		console.log(favoritos);
-	}
+	// 	setFavoritos(Favoritos.concat(añadir));
+	// 	setAñadir("");
+	// 	console.log(favoritos);
+	// }
 
   return (
     <nav className="navbar bg-light">
@@ -42,9 +42,9 @@ export const Navbar = () => {
           </button>
           <ul className="dropdown-menu">
             <li>
-              {favoritos.map((item, index) => (
+              {store.favoritos.map((item, index) => (
               <Link className="dropdown-item" key={index} to={"/single/"+props.id}>
-                {item}
+                {item.name}
               </Link>
               ))}
             </li>

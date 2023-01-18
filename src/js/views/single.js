@@ -7,19 +7,16 @@ export const Single = (props) => {
   const { store, actions } = useContext(Context);
   const params = useParams();
 
-  console.log(store.personajes);
-
-  const [personajes2, setPersonajes2] = useState({});
-
-  function getInfoCharacters() {
-    fetch("https://www.swapi.tech/api/people/"+params.theid)
-      .then((res) => res.json())
-      .then((data) => setPersonajes2(data.result.properties))
-      .catch((err) => console.error(err));
-  }
+  // const [personajes2, setPersonajes2] = useState({});
+  // function getInfoCharacters() {
+  //   fetch("https://www.swapi.tech/api/people/"+params.theid)
+  //     .then((res) => res.json())
+  //     .then((data) => setPersonajes2(data.result.properties))
+  //     .catch((err) => console.error(err));
+  // }
 
   useEffect(() => {
-    getInfoCharacters();
+    actions.getInfoCharacters(params.theid);
   }, []);
 
   return (
@@ -33,7 +30,7 @@ export const Single = (props) => {
         />
         <div className="text-center ms-3">
           <h1 className="text-center">
-			{personajes2.name}
+			{store.personajes2.properties?.name}
           </h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
@@ -48,27 +45,27 @@ export const Single = (props) => {
         <div className="d-flex mt-2 text-danger">
           <div className="col-2 text-center">
             <p><strong>Name</strong></p>
-			<p>{personajes2.name}</p>
+			<p>{store.personajes2.properties?.name}</p>
           </div>
           <div className="col-2 text-center">
             <p><strong>Birth Year</strong></p>
-			<p>{personajes2.birth_year}</p>
+			<p>{store.personajes2.properties?.birth_year}</p>
           </div>
           <div className="col-2 text-center">
             <p><strong>Gender</strong></p>
-			<p>{personajes2.gender}</p>
+			<p>{store.personajes2.properties?.gender}</p>
           </div>
           <div className="col-2 text-center">
             <p><strong>Height</strong></p>
-			<p>{personajes2.height}</p>
+			<p>{store.personajes2.properties?.height}</p>
           </div>
           <div className="col-2 text-center">
             <p><strong>Skin color</strong></p>
-			<p>{personajes2.skin_color}</p>
+			<p>{store.personajes2.properties?.skin_color}</p>
           </div>
           <div className="col-2 text-center">
             <p><strong>Eye color</strong></p>
-			<p>{personajes2.eye_color}</p>
+			<p>{store.personajes2.properties?.eye_color}</p>
           </div>
         </div>
       </div>
