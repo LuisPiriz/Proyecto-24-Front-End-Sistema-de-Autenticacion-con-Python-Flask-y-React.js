@@ -80,14 +80,14 @@ const getState = ({
                 e.preventDefault()
                 const store = getStore()
                 setStore({
-                    favoritos: ([...store.favoritos, {"uid": store.personajes.uid, "name": "luke", "url": store.personajes.url}])
+                    favoritos: ([...store.favoritos, {"uid": store.personajes.uid, "name": store.personajes.name, "url": store.personajes.url}])
                 })
 				// setStore({
                 //     favoritos: ([...store.favoritos, {"name": store.personajes.name}])
                 // })
-				// setStore({
-				// 	    favoritos: store.personajes
-				// })
+				setStore({
+					    favoritos: store.personajes
+				})
                 console.log(store.favoritos);
             },
             changeColor: (index, color) => {
