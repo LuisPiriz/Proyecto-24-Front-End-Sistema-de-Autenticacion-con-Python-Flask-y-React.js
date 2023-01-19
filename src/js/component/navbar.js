@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import { Characters } from "./characters";
 import { Context } from "../store/appContext";
@@ -7,6 +7,7 @@ import { Context } from "../store/appContext";
 export const Navbar = (props) => {
 
   const { store } = useContext(Context);
+  const params = useParams();
   // console.log(store.favoritos);
 
   // const [favoritos, setFavoritos] = useState([])
@@ -44,7 +45,7 @@ export const Navbar = (props) => {
             <li>
               {store.favoritos.map((item, index) => (
               <Link className="dropdown-item" key={index} to={"/single/"+props.id}>
-                {item.name}
+                {item.favs}
               </Link>
               ))}
             </li>

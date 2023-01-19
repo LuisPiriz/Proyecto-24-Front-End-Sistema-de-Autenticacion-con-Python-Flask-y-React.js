@@ -76,17 +76,14 @@ const getState = ({
                     }))
                     .catch((err) => console.error(err));
             },
-            agregarFavorito: (e) => {
-                e.preventDefault()
+            agregarFavorito: (favs) => {
+                
                 const store = getStore()
-                setStore({
-                    favoritos: ([...store.favoritos, {"uid": store.personajes.uid, "name": store.personajes.name, "url": store.personajes.url}])
-                })
-				// setStore({
-                //     favoritos: ([...store.favoritos, {"name": store.personajes.name}])
+                // setStore({
+                //     favoritos: ([...store.favoritos, {"uid": store.personajes.uid, "name": store.personajes.name, "url": store.personajes.url}])
                 // })
 				setStore({
-					    favoritos: store.personajes
+					    favoritos: [...store.favoritos, {favs}]
 				})
                 console.log(store.favoritos);
             },
