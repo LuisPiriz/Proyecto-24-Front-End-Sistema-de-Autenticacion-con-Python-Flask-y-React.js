@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { Link } from "react-router-dom";
 
+import { Context } from "../store/appContext";
+
 export const Vehicles = (props) => {
+
+  const { store, actions } = useContext(Context);
+
   return (
     <div className="">
     <div className="card mx-3 bg-dark text-light" style={{height: "auto", width: 350}}>
@@ -15,7 +20,7 @@ export const Vehicles = (props) => {
           <li className="list-group-item bg-dark text-warning border-warning">Capacity:</li>
         </ul>
         <Link to={"/single3/"+props.id} type="button" className="btn btn-outline-light">Learn more</Link>
-        <button type="button" className="btn btn-outline-warning float-end"><i className="fa fa-heart"></i></button>
+        <button type="button" onClick={() => store.favoritos.indexOf(props.nombre) !== -1 ? alert("Ya le diste like") : actions.agregarFavorito(props.nombre)} className="btn btn-outline-warning float-end"><i className="fa fa-heart"></i></button>
       </div>
     </div>
   </div>

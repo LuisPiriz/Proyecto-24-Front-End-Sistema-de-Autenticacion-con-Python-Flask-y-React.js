@@ -77,15 +77,21 @@ const getState = ({
                     .catch((err) => console.error(err));
             },
             agregarFavorito: (favs) => {
-                
+
                 const store = getStore()
                 // setStore({
                 //     favoritos: ([...store.favoritos, {"uid": store.personajes.uid, "name": store.personajes.name, "url": store.personajes.url}])
                 // })
-				setStore({
-					    favoritos: [...store.favoritos, {favs}]
-				})
+                setStore({
+                    favoritos: [...store.favoritos, favs]
+                })
                 console.log(store.favoritos);
+            },
+            borrarFavorito: (favs) => {
+                const store = getStore()
+                setStore(
+                    {favoritos: store.favoritos.filter((item, i) => item !== favs)})
+                // console.log("borrado")
             },
             changeColor: (index, color) => {
                 //get the store

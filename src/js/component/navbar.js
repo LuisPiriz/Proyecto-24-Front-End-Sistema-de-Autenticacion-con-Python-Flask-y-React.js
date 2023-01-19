@@ -6,7 +6,7 @@ import { Context } from "../store/appContext";
 
 export const Navbar = (props) => {
 
-  const { store } = useContext(Context);
+  const { store, actions } = useContext(Context);
   const params = useParams();
   // console.log(store.favoritos);
 
@@ -22,7 +22,7 @@ export const Navbar = (props) => {
 	// }
 
   return (
-    <nav className="navbar bg-light">
+    <nav className="navbar bg-dark bg-gradient">
       <div className="container">
         <Link className="navbar-brand" to="/">
           <img
@@ -42,13 +42,17 @@ export const Navbar = (props) => {
             Favorites
           </button>
           <ul className="dropdown-menu">
-            <li>
+           
               {store.favoritos.map((item, index) => (
-              <Link className="dropdown-item" key={index} to={"/single/"+props.id}>
-                {item.favs}
+                 <li className="d-flex" key={index}>
+              <Link className="dropdown-item" to={"/single/"+props.id}>
+                {item}
               </Link>
+              <button className="btn-close m-2" onClick={() => actions.borrarFavorito(item)}>
+              </button>
+              </li>
               ))}
-            </li>
+            
           </ul>
         </div>
       </div>

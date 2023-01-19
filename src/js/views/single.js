@@ -28,10 +28,11 @@ export const Single = (props) => {
           width={"auto"}
           alt=""
         />
-        <div className="text-center ms-3">
+        <div className="text-center ms-3 text-light">
           <h1 className="text-center">
 			{store.personajes2.properties?.name}
           </h1>
+          <hr className="my-4 text-warning" />
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
             dolorem quos quo soluta saepe quaerat molestias placeat deleniti.
@@ -41,8 +42,8 @@ export const Single = (props) => {
         </div>
       </div>
       <div className="text-center">
-        <hr className="my-4 text-danger" />
-        <div className="d-flex mt-2 text-danger">
+        <hr className="my-4 text-warning" />
+        <div className="d-flex mt-2 text-warning">
           <div className="col-2 text-center">
             <p><strong>Name</strong></p>
 			<p>{store.personajes2.properties?.name}</p>

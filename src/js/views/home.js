@@ -11,37 +11,12 @@ export const Home = () => {
 
   const { store } = useContext(Context);
 
-  // const [personajes, setPersonajes] = useState([]);
-  // const [planetas, setPlanetas] = useState([]);
-  // const [vehiculos, setVehiculos] = useState([]);
-  // function getCharacters() {
-  //   fetch("https://www.swapi.tech/api/people/")
-  //     .then((res) => res.json())
-  //     .then((data) => setPersonajes(data.results))
-  //     .catch((err) => console.error(err));
-  // }
-  // function getPlanets() {
-  //   fetch("https://www.swapi.tech/api/planets")
-  //     .then((res) => res.json())
-  //     .then((data) => setPlanetas(data.results))
-  //     .catch((err) => console.error(err));
-  // }
-  // function getVehicles() {
-  //   fetch("https://www.swapi.tech/api/vehicles")
-  //     .then((res) => res.json())
-  //     .then((data) => setVehiculos(data.results))
-  //     .catch((err) => console.error(err));
-  // }
-  // useEffect(() => {
-    // getCharacters();
-    // getPlanets();
-    // getVehicles();
-  // }, []);
+
 
   return (
     <>
       <div className="mt-3">
-        <div className="text-center">
+        <div className="text-center text-warning">
           <h1>Characters</h1>
         </div>
         <div className="scroll mb-4">
@@ -59,7 +34,7 @@ export const Home = () => {
       </div>
 
       <div className="">
-        <div className="text-center">
+        <div className="text-center text-warning">
           <h1>Planets</h1>
         </div>
         <div className="scroll mb-4">
@@ -73,7 +48,7 @@ export const Home = () => {
       </div>
 
       <div className="">
-        <div className="text-center">
+        <div className="text-center text-warning">
           <h1>Vehicles</h1>
         </div>
         <div className="scroll mb-4">
