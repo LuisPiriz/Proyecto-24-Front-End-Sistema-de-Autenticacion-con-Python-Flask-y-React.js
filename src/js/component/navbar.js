@@ -45,7 +45,7 @@ export const Navbar = (props) => {
            
               {store.favoritos.map((item, index) => (
                  <li className="d-flex" key={index}>
-              <a className="lh-lg text-warning dropdown-item" href="">
+              <a className="lh-lg text-warning dropdown-item" type="button">
                 {item}
               </a>
               <button className="closebutton m-2 text-warning" onClick={() => actions.borrarFavorito(item)}>x

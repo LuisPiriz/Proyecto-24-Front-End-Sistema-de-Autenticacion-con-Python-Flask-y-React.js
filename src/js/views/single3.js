@@ -13,33 +13,7 @@ export const Single3 = (props) => {
 	actions.getInfoVehicles(params.theid);
   }, []);
 
-  function cambiadorIndex(){
-    let crazyNumber = 0;
-    if (params.theid==4) {
-        crazyNumber = "0";
-    }else if (params.theid==7) {
-        crazyNumber = "1";
-    }else if (params.theid==6) {
-        crazyNumber = "2";
-    }else if (params.theid==8) {
-        crazyNumber = "3";
-    }else if (params.theid==14) {
-        crazyNumber = "4";
-    }else if (params.theid==18) {
-        crazyNumber = "5";
-    }else if (params.theid==16) {
-        crazyNumber = "6";
-}else if (params.theid==19) {
-        crazyNumber = "7";
-    }else if (params.theid==20) {
-        crazyNumber = "8";
-    }else {
-        crazyNumber = "9";
-        
-    }
-    return crazyNumber;
-    } 
-    let posicionator = cambiadorIndex();
+  let posicionator = actions.cambiadorIndex(params.theid);
 
   return (
     <div className="container mt-4">

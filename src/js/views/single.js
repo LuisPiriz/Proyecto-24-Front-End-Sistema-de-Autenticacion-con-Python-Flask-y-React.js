@@ -22,7 +22,7 @@ export const Single = (props) => {
           height={"300"}
           width={"auto"}
           alt=""
-          className="border border-warning rounded"
+          className="details-image border border-warning rounded"
         />
         <div className="text-center ms-3 text-light">
           <h1 className="text-center text-warning">{store.personajes2.properties?.name}</h1>

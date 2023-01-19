@@ -89,6 +89,32 @@ const getState = ({
                 setStore(
                     {favoritos: store.favoritos.filter((item, i) => item !== favs)})
             },
+            cambiadorIndex: (laid) => {
+                let crazyNumber = 0;
+                if (laid==4) {
+                    crazyNumber = "0";
+                }else if (laid==7) {
+                    crazyNumber = "1";
+                }else if (laid==6) {
+                    crazyNumber = "2";
+                }else if (laid==8) {
+                    crazyNumber = "3";
+                }else if (laid==14) {
+                    crazyNumber = "4";
+                }else if (laid==18) {
+                    crazyNumber = "5";
+                }else if (laid==16) {
+                    crazyNumber = "6";
+            }else if (laid==19) {
+                    crazyNumber = "7";
+                }else if (laid==20) {
+                    crazyNumber = "8";
+                }else {
+                    crazyNumber = "9";
+                
+                }
+                return crazyNumber;
+                },
             changeColor: (index, color) => {
                 //get the store
                 const store = getStore();
