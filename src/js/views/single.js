@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
+import PersonajesInfo from "/workspace/Proyecto-19-StarwarsBlogReadingList/src/js/component/personajes.json"
+
 export const Single = (props) => {
   const { store, actions } = useContext(Context);
   const params = useParams();
@@ -11,6 +13,7 @@ export const Single = (props) => {
     actions.getInfoCharacters(params.theid);
   }, []);
 
+  let posicionador = params.theid-1; 
   return (
     <div className="container mt-4">
       <div className="d-flex">
@@ -25,10 +28,7 @@ export const Single = (props) => {
           <h1 className="text-center text-warning">{store.personajes2.properties?.name}</h1>
           <hr className="my-4 text-warning" />
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
-            dolorem quos quo soluta saepe quaerat molestias placeat deleniti.
-            Tempore sunt vel animi eveniet, nesciunt officia ullam nemo ipsum
-            dignissimos fugiat? Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur dignissimos fugiat at nam necessitatibus corrupti est odio, debitis cumque, possimus hic placeat sed, excepturi beatae! Sed facilis possimus alias a.
+            {PersonajesInfo[posicionador].description}
           </p>
         </div>
       </div>

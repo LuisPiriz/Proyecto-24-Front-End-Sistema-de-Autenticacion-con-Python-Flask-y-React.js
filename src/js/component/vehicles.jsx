@@ -9,7 +9,7 @@ export const Vehicles = (props) => {
 
   return (
     <div className="">
-    <div className="card me-4  text-warning border border-warning" style={{height: "auto", width: 300}}>
+    <div className="card me-4  text-warning border border-warning" style={{height: "auto", width: 360}}>
       <img src={`https://starwars-visualguide.com/assets/img/vehicles/${props.id}.jpg`} className="card-img-top border-bottom border-warning" alt="..." />
       <div className="card-body">
         <h5 className="card-title">{props.nombre}</h5>

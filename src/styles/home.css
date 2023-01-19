@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+body {
+    background-image: url("https://images.pling.com/img/00/00/62/63/38/1904285/hd-star-sky2.png");
+    background-repeat: repeat;
+    font-family: 'Orbitron', sans-serif;
+}
+
 .navbar {
     background-color: #000000;
     border-bottom: #FFC107 solid;
@@ -16,6 +24,10 @@
 .card {
     background-color: #000000;
 }
+
+/* .card-title {
+    font-size: 16px;
+} */
 
 .list-group-item {
     background-color: #000000;
@@ -48,9 +60,4 @@
     /* roundness of the scroll thumb */
     border: 1px solid #FFC107;
     /* creates padding around scroll thumb */
-}
-
-body {
-    background-image: url("https://images.pling.com/img/00/00/62/63/38/1904285/hd-star-sky2.png");
-    background-repeat: repeat;
 }

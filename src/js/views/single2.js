@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
+import PlanetasInfo from "/workspace/Proyecto-19-StarwarsBlogReadingList/src/js/component/planetas.json";
+
 export const Single2 = (props) => {
   const { store, actions } = useContext(Context);
   const params = useParams();
@@ -11,6 +13,7 @@ export const Single2 = (props) => {
 	actions.getInfoPlanets(params.theid);
   }, []);
 
+  let posicionador = params.theid-1; 
   return (
     <div className="container mt-4">
 		<div className="d-flex">
@@ -27,10 +30,7 @@ export const Single2 = (props) => {
           </h1>
           <hr className="my-4 text-warning" />
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
-            dolorem quos quo soluta saepe quaerat molestias placeat deleniti.
-            Tempore sunt vel animi eveniet, nesciunt officia ullam nemo ipsum
-            dignissimos fugiat? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus nihil enim, dolorum quae quos magni nostrum consequuntur. Ratione repellat ab cum voluptas dolores inventore quibusdam nulla natus. Nihil, ex quos!
+          {PlanetasInfo[posicionador].description}
           </p>
         </div>
       </div>

@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
+import VehiclesInfo from "/workspace/Proyecto-19-StarwarsBlogReadingList/src/js/component/vehicles.json"
+
 export const Single3 = (props) => {
   const { store, actions } = useContext(Context);
   const params = useParams();
@@ -10,6 +12,34 @@ export const Single3 = (props) => {
   useEffect(() => {
 	actions.getInfoVehicles(params.theid);
   }, []);
+
+  function cambiadorIndex(){
+    let crazyNumber = 0;
+    if (params.theid==4) {
+        crazyNumber = "0";
+    }else if (params.theid==7) {
+        crazyNumber = "1";
+    }else if (params.theid==6) {
+        crazyNumber = "2";
+    }else if (params.theid==8) {
+        crazyNumber = "3";
+    }else if (params.theid==14) {
+        crazyNumber = "4";
+    }else if (params.theid==18) {
+        crazyNumber = "5";
+    }else if (params.theid==16) {
+        crazyNumber = "6";
+}else if (params.theid==19) {
+        crazyNumber = "7";
+    }else if (params.theid==20) {
+        crazyNumber = "8";
+    }else {
+        crazyNumber = "9";
+        
+    }
+    return crazyNumber;
+    } 
+    let posicionator = cambiadorIndex();
 
   return (
     <div className="container mt-4">
@@ -27,10 +57,7 @@ export const Single3 = (props) => {
           </h1>
           <hr className="my-4 text-warning" />
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
-            dolorem quos quo soluta saepe quaerat molestias placeat deleniti.
-            Tempore sunt vel animi eveniet, nesciunt officia ullam nemo ipsum
-            dignissimos fugiat? Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, beatae. Accusantium non eos aliquid architecto saepe amet sequi facere, labore perferendis odit ea, minima fugiat vitae porro cum ab eligendi!
+          {VehiclesInfo[posicionator].description}
           </p>
         </div>
       </div>
