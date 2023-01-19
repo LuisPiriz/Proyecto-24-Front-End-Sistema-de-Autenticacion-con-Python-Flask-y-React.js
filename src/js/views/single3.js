@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
-
 import VehiclesInfo from "/workspace/Proyecto-19-StarwarsBlogReadingList/src/js/component/vehicles.json"
 
 export const Single3 = (props) => {
