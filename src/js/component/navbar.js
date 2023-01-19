@@ -22,11 +22,11 @@ export const Navbar = (props) => {
 	// }
 
   return (
-    <nav className="navbar bg-dark bg-gradient">
+    <nav className="navbar p-0">
       <div className="container">
-        <Link className="navbar-brand" to="/">
+        <Link className="navbar-brand p-0" to="/">
           <img
-            src="https://i.pinimg.com/originals/b4/b5/fd/b4b5fdf7bf06601ad4bd1cc6f73acff3.png"
+            src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Star_Wars_Yellow_Logo.svg"
             alt="Bootstrap"
             width="80"
             height="80"
@@ -34,21 +34,21 @@ export const Navbar = (props) => {
         </Link>
         <div className="dropdown">
           <button
-            className="btn btn-warning dropdown-toggle"
+            className="btn btn-outline-warning border-2 dropdown-toggle"
             type="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
             Favorites
           </button>
-          <ul className="dropdown-menu">
+          <ul className="dropdown-menu dropdown-menu-dark p-0">
            
               {store.favoritos.map((item, index) => (
                  <li className="d-flex" key={index}>
-              <Link className="dropdown-item" to={"/single/"+props.id}>
+              <a className="lh-lg text-warning dropdown-item" href="">
                 {item}
-              </Link>
-              <button className="btn-close m-2" onClick={() => actions.borrarFavorito(item)}>
+              </a>
+              <button className="closebutton m-2 text-warning" onClick={() => actions.borrarFavorito(item)}>x
               </button>
               </li>
               ))}

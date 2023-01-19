@@ -7,37 +7,28 @@ export const Single = (props) => {
   const { store, actions } = useContext(Context);
   const params = useParams();
 
-  // const [personajes2, setPersonajes2] = useState({});
-  // function getInfoCharacters() {
-  //   fetch("https://www.swapi.tech/api/people/"+params.theid)
-  //     .then((res) => res.json())
-  //     .then((data) => setPersonajes2(data.result.properties))
-  //     .catch((err) => console.error(err));
-  // }
-
   useEffect(() => {
     actions.getInfoCharacters(params.theid);
   }, []);
 
   return (
     <div className="container mt-4">
-		<div className="d-flex">
+      <div className="d-flex">
         <img
           src={`https://starwars-visualguide.com/assets/img/characters/${params.theid}.jpg`}
           height={"300"}
           width={"auto"}
           alt=""
+          className="border border-warning rounded"
         />
         <div className="text-center ms-3 text-light">
-          <h1 className="text-center">
-			{store.personajes2.properties?.name}
-          </h1>
+          <h1 className="text-center text-warning">{store.personajes2.properties?.name}</h1>
           <hr className="my-4 text-warning" />
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
             dolorem quos quo soluta saepe quaerat molestias placeat deleniti.
             Tempore sunt vel animi eveniet, nesciunt officia ullam nemo ipsum
-            dignissimos fugiat?
+            dignissimos fugiat? Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur dignissimos fugiat at nam necessitatibus corrupti est odio, debitis cumque, possimus hic placeat sed, excepturi beatae! Sed facilis possimus alias a.
           </p>
         </div>
       </div>
@@ -45,28 +36,40 @@ export const Single = (props) => {
         <hr className="my-4 text-warning" />
         <div className="d-flex mt-2 text-warning">
           <div className="col-2 text-center">
-            <p><strong>Name</strong></p>
-			<p>{store.personajes2.properties?.name}</p>
+            <p>
+              <strong>Name</strong>
+            </p>
+            <p className="text-light">{store.personajes2.properties?.name}</p>
           </div>
           <div className="col-2 text-center">
-            <p><strong>Birth Year</strong></p>
-			<p>{store.personajes2.properties?.birth_year}</p>
+            <p>
+              <strong>Birth Year</strong>
+            </p>
+            <p className="text-light">{store.personajes2.properties?.birth_year}</p>
           </div>
           <div className="col-2 text-center">
-            <p><strong>Gender</strong></p>
-			<p>{store.personajes2.properties?.gender}</p>
+            <p>
+              <strong>Gender</strong>
+            </p>
+            <p className="text-light">{store.personajes2.properties?.gender}</p>
           </div>
           <div className="col-2 text-center">
-            <p><strong>Height</strong></p>
-			<p>{store.personajes2.properties?.height}</p>
+            <p>
+              <strong>Height</strong>
+            </p>
+            <p className="text-light">{store.personajes2.properties?.height}</p>
           </div>
           <div className="col-2 text-center">
-            <p><strong>Skin color</strong></p>
-			<p>{store.personajes2.properties?.skin_color}</p>
+            <p>
+              <strong>Skin color</strong>
+            </p>
+            <p className="text-light">{store.personajes2.properties?.skin_color}</p>
           </div>
           <div className="col-2 text-center">
-            <p><strong>Eye color</strong></p>
-			<p>{store.personajes2.properties?.eye_color}</p>
+            <p>
+              <strong>Eye color</strong>
+            </p>
+            <p className="text-light">{store.personajes2.properties?.eye_color}</p>
           </div>
         </div>
       </div>

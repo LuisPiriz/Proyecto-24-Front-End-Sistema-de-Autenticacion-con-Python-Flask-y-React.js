@@ -7,14 +7,6 @@ export const Single2 = (props) => {
   const { store, actions } = useContext(Context);
   const params = useParams();
 
-  // const [planetas2, setPlanetas2] = useState({});
-  // function getInfoPlanets() {
-  //   fetch("https://www.swapi.tech/api/planets/"+params.theid)
-  //     .then((res) => res.json())
-  //     .then((data) => setPlanetas2(data.result.properties))
-  //     .catch((err) => console.error(err));
-  // }
-
   useEffect(() => {
 	actions.getInfoPlanets(params.theid);
   }, []);
@@ -27,45 +19,47 @@ export const Single2 = (props) => {
           height={"300"}
           width={"auto"}
           alt=""
+          className="border border-warning rounded"
         />
-        <div className="text-center ms-3">
-          <h1 className="text-center">
+        <div className="text-center ms-3 text-light">
+          <h1 className="text-center text-warning">
 			{store.planetas2.properties?.name}
           </h1>
+          <hr className="my-4 text-warning" />
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
             dolorem quos quo soluta saepe quaerat molestias placeat deleniti.
             Tempore sunt vel animi eveniet, nesciunt officia ullam nemo ipsum
-            dignissimos fugiat?
+            dignissimos fugiat? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus nihil enim, dolorum quae quos magni nostrum consequuntur. Ratione repellat ab cum voluptas dolores inventore quibusdam nulla natus. Nihil, ex quos!
           </p>
         </div>
       </div>
       <div className="text-center">
-        <hr className="my-4 text-danger" />
-        <div className="d-flex mt-2 text-danger">
+        <hr className="my-4 text-warning" />
+        <div className="d-flex mt-2 text-warning">
           <div className="col-2 text-center">
             <p><strong>Name</strong></p>
-			<p>{store.planetas2.properties?.name}</p>
+			<p className="text-light">{store.planetas2.properties?.name}</p>
           </div>
           <div className="col-2 text-center">
             <p><strong>Climate</strong></p>
-			<p>{store.planetas2.properties?.climate}</p>
+			<p className="text-light">{store.planetas2.properties?.climate}</p>
           </div>
           <div className="col-2 text-center">
             <p><strong>Population</strong></p>
-			<p>{store.planetas2.properties?.population}</p>
+			<p className="text-light">{store.planetas2.properties?.population}</p>
           </div>
           <div className="col-2 text-center">
             <p><strong>Orbital Period</strong></p>
-			<p>{store.planetas2.properties?.orbital_period}</p>
+			<p className="text-light">{store.planetas2.properties?.orbital_period}</p>
           </div>
           <div className="col-2 text-center">
             <p><strong>Rotation Period</strong></p>
-			<p>{store.planetas2.properties?.rotation_period}</p>
+			<p className="text-light">{store.planetas2.properties?.rotation_period}</p>
           </div>
           <div className="col-2 text-center">
             <p><strong>Diameter</strong></p>
-			<p>{store.planetas2.properties?.diameter}</p>
+			<p className="text-light">{store.planetas2.properties?.diameter}</p>
           </div>
         </div>
       </div>

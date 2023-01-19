@@ -1,3 +1,26 @@
+.navbar {
+    background-color: #000000;
+    border-bottom: #FFC107 solid;
+}
+
+.dropdown-menu {
+    background-color: rgb(17, 17, 17);
+}
+
+.closebutton {
+    background-color: rgb(17, 17, 17);
+    border: none;
+    /* font-size: 20px; */
+}
+
+.card {
+    background-color: #000000;
+}
+
+.list-group-item {
+    background-color: #000000;
+}
+
 .scroll {
     height: auto;
     width: 80%;
@@ -7,6 +30,27 @@
     margin: auto;
 }
 
-body {
+.scroll::-webkit-scrollbar {
+    width: 50px;
+    /* width of the entire scrollbar */
+}
+
+.scroll::-webkit-scrollbar-track {
+    background: rgb(13, 13, 13);
+    border-radius: 20px;
+    /* color of the tracking area */
+}
+
+.scroll::-webkit-scrollbar-thumb {
     background-color: black;
+    /* color of the scroll thumb */
+    border-radius: 20px;
+    /* roundness of the scroll thumb */
+    border: 1px solid #FFC107;
+    /* creates padding around scroll thumb */
+}
+
+body {
+    background-image: url("https://images.pling.com/img/00/00/62/63/38/1904285/hd-star-sky2.png");
+    background-repeat: repeat;
 }

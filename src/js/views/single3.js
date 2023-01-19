@@ -7,14 +7,6 @@ export const Single3 = (props) => {
   const { store, actions } = useContext(Context);
   const params = useParams();
 
-  // const [vehiculos2, setVehiculos2] = useState({});
-  // function getInfoVehicles() {
-  //   fetch("https://www.swapi.tech/api/vehicles/"+params.theid)
-  //     .then((res) => res.json())
-  //     .then((data) => setVehiculos2(data.result.properties))
-  //     .catch((err) => console.error(err));
-  // }
-
   useEffect(() => {
 	actions.getInfoVehicles(params.theid);
   }, []);
@@ -27,45 +19,47 @@ export const Single3 = (props) => {
           height={"300"}
           width={"auto"}
           alt=""
+          className="border border-warning rounded"
         />
-        <div className="text-center ms-3">
-          <h1 className="text-center">
+        <div className="text-center ms-3 text-light">
+          <h1 className="text-center text-warning">
 			{store.vehiculos2.properties?.name}
           </h1>
+          <hr className="my-4 text-warning" />
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
             dolorem quos quo soluta saepe quaerat molestias placeat deleniti.
             Tempore sunt vel animi eveniet, nesciunt officia ullam nemo ipsum
-            dignissimos fugiat?
+            dignissimos fugiat? Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, beatae. Accusantium non eos aliquid architecto saepe amet sequi facere, labore perferendis odit ea, minima fugiat vitae porro cum ab eligendi!
           </p>
         </div>
       </div>
       <div className="text-center">
-        <hr className="my-4 text-danger" />
-        <div className="d-flex mt-2 text-danger">
+        <hr className="my-4 text-warning" />
+        <div className="d-flex mt-2 text-warning">
           <div className="col-2 text-center">
             <p><strong>Name</strong></p>
-			<p>{store.vehiculos2.properties?.name}</p>
+			<p className="text-light">{store.vehiculos2.properties?.name}</p>
           </div>
           <div className="col-2 text-center">
             <p><strong>Cargo Capacity</strong></p>
-			<p>{store.vehiculos2.properties?.cargo_capacity}</p>
+			<p className="text-light">{store.vehiculos2.properties?.cargo_capacity}</p>
           </div>
           <div className="col-2 text-center">
             <p><strong>Crew</strong></p>
-			<p>{store.vehiculos2.properties?.crew}</p>
+			<p className="text-light">{store.vehiculos2.properties?.crew}</p>
           </div>
           <div className="col-2 text-center">
             <p><strong>Length</strong></p>
-			<p>{store.vehiculos2.properties?.length}</p>
+			<p className="text-light">{store.vehiculos2.properties?.length}</p>
           </div>
           <div className="col-2 text-center">
             <p><strong>Model</strong></p>
-			<p>{store.vehiculos2.properties?.model}</p>
+			<p className="text-light">{store.vehiculos2.properties?.model}</p>
           </div>
           <div className="col-2 text-center">
             <p><strong>Passengers</strong></p>
-			<p>{store.vehiculos2.properties?.passengers}</p>
+			<p className="text-light">{store.vehiculos2.properties?.passengers}</p>
           </div>
         </div>
       </div>
