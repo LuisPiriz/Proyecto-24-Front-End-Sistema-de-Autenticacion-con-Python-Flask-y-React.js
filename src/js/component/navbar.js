@@ -8,18 +8,6 @@ export const Navbar = (props) => {
 
   const { store, actions } = useContext(Context);
   const params = useParams();
-  // console.log(store.favoritos);
-
-  // const [favoritos, setFavoritos] = useState([])
-  // const [añadir, setAñadir] = useState("")
-
-  // function addFavoritos(e) {
-	// 	e.preventDefault()// detenemos el comportamiento predeterminado para procesar nuestro codigo
-	
-	// 	setFavoritos(Favoritos.concat(añadir));
-	// 	setAñadir("");
-	// 	console.log(favoritos);
-	// }
 
   return (
     <nav className="navbar p-0">

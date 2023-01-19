@@ -11,8 +11,6 @@ export const Home = () => {
 
   const { store } = useContext(Context);
 
-
-
   return (
     <>
       <div className="mt-3">
@@ -25,9 +23,6 @@ export const Home = () => {
             key={index}
               nombre={item.name}
 			  id={item.uid}
-              genero={item.gender}
-              pelo={item.hair_color}
-              ojos={item.eye_color}
             />
           ))}
         </div>
