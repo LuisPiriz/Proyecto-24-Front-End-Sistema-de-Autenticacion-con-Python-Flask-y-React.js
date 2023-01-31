@@ -4,10 +4,24 @@ import { Link, useParams } from "react-router-dom";
 import { Characters } from "./characters";
 import { Context } from "../store/appContext";
 
+import { useNavigate } from "react-router-dom"; // importamos el hook useNavigate para redireccionar desde una funcion
+
 export const Navbar = (props) => {
 
   const { store, actions } = useContext(Context);
+  const navigate = useNavigate() //activamos useNavigate
   const params = useParams();
+
+  function handleLogout() {
+		actions.logout()//cerrar la sesion
+		navigate("/login")//usamos navigate para redireccionar
+
+	}
+  function handleLogin() {
+		actions.login()//cerrar la sesion
+		navigate("/login")//usamos navigate para redireccionar
+
+	}
 
   return (
     <nav className="navbar p-0">
@@ -21,6 +35,7 @@ export const Navbar = (props) => {
           />
         </Link>
         <div className="dropdown">
+        {store.auth === true? <button className="btn btn-outline-warning mx-2 border-2" onClick={handleLogout}>Logout</button> : <button className="btn btn-outline-warning mx-2 border-2" onClick={handleLogin}>Login</button>}
           <button
             className="btn btn-outline-warning border-2 dropdown-toggle"
             type="button"

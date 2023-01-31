@@ -16,6 +16,7 @@ const getState = ({
                     initial: "white"
                 }
             ],
+            auth: false,
             personajes: [],
             personajes2: {},
             planetas: [],
@@ -51,6 +52,42 @@ const getState = ({
                         vehiculos: data.results
                     }))
                     .catch((err) => console.error(err));
+            },
+            logout: () => {
+                localStorage.removeItem('token');
+                setStore({
+                    auth: false
+                })
+            },
+            login: (userEmail, userPassword) => {
+                fetch('https://3000-luispiriz-proyecto23bui-cde0aqka4jj.ws-us84.gitpod.io/login', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                            // 'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                        body: JSON.stringify({
+                            "email": userEmail,
+                            "password": userPassword
+                        }) // body data type must match "Content-Type" header
+                    })
+                    .then((response) => {
+                        console.log(response.status);
+                        if (response.status === 200) {
+                            setStore({
+                                auth: true
+                            })
+                        }
+                        return response.json()
+                    })
+                    .then((data) => {
+                        console.log(data)
+                        if (data.msg === "Bad email or password") {
+                            alert(data.msg)
+                        }
+                        localStorage.setItem("token", data.access_token)
+                    })
+                    .catch((err) => console.log(err))
             },
             getInfoCharacters: (id) => {
                 fetch("https://www.swapi.tech/api/people/" + id)
