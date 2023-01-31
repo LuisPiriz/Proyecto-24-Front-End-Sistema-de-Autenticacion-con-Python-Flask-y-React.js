@@ -59,6 +59,25 @@ const getState = ({
                     auth: false
                 })
             },
+            signup: (userEmail, userPassword, userName, userfirstName, userlastName) => {
+                fetch('https://3000-luispiriz-proyecto23bui-cde0aqka4jj.ws-us84.gitpod.io/signup', {
+                        method: 'POST', 
+                        mode: 'no-cors',
+                        credentials: 'include',
+                        headers: {
+                            // 'Content-Type': 'application/json'
+                            // 'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                        body: JSON.stringify({
+                            "email": userEmail,
+                            "password": userPassword,
+                            "username": userName,
+                            "firstName": userfirstName,
+                            "lastname": userlastName,
+                        }) // body data type must match "Content-Type" header
+                    })
+                    .catch((err) => console.log(err))
+            },
             login: (userEmail, userPassword) => {
                 fetch('https://3000-luispiriz-proyecto23bui-cde0aqka4jj.ws-us84.gitpod.io/login', {
                         method: 'POST',

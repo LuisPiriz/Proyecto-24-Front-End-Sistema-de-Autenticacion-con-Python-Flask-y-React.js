@@ -22,6 +22,10 @@ export const Navbar = (props) => {
 		navigate("/login")//usamos navigate para redireccionar
 
 	}
+  function handleSignup() {
+		navigate("/signup")//usamos navigate para redireccionar
+
+	}
 
   return (
     <nav className="navbar p-0">
@@ -35,7 +39,7 @@ export const Navbar = (props) => {
           />
         </Link>
         <div className="dropdown">
-        {store.auth === true? <button className="btn btn-outline-warning mx-2 border-2" onClick={handleLogout}>Logout</button> : <button className="btn btn-outline-warning mx-2 border-2" onClick={handleLogin}>Login</button>}
+        {store.auth === true? <button className="btn btn-outline-warning mx-2 border-2" onClick={handleLogout}>Logout</button> : <><button className="btn btn-outline-warning me-2 border-2" onClick={handleLogin}>Login</button><button className="btn btn-outline-warning me-2 border-2" onClick={handleSignup}>Sign Up</button></>}
           <button
             className="btn btn-outline-warning border-2 dropdown-toggle"
             type="button"

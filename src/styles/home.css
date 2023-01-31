@@ -25,10 +25,6 @@ body {
     background-color: #000000;
 }
 
-/* .card-title {
-    font-size: 16px;
-} */
-
 .list-group-item {
     background-color: #000000;
 }
@@ -63,25 +59,15 @@ body {
 }
 
 body::-webkit-scrollbar {
-    width: 15px;
-    /* width of the entire scrollbar */
+    width: 14px;
 }
 
 body::-webkit-scrollbar-track {
     background: rgb(13, 13, 13);
-    /* border-radius: 20px; */
-    /* color of the tracking area */
 }
 
 body::-webkit-scrollbar-thumb {
     background-color: black;
-    /* color of the scroll thumb */
     border-radius: 20px;
-    /* roundness of the scroll thumb */
     border: 1px solid #FFC107;
-    /* creates padding around scroll thumb */
 }
-
-/* .details-image {
-    vertical-align: middle;
-} */
