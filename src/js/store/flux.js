@@ -60,12 +60,12 @@ const getState = ({
                 })
             },
             signup: (userEmail, userPassword, userName, userfirstName, userlastName) => {
-                fetch('https://3000-luispiriz-proyecto23bui-cde0aqka4jj.ws-us84.gitpod.io/signup', {
-                        method: 'POST', 
+                fetch('https://3000-luispiriz-proyecto24bac-5rbmfnqed4l.ws-us85.gitpod.io/signup', {
+                        method: 'POST',
                         mode: 'no-cors',
                         credentials: 'include',
                         headers: {
-                            // 'Content-Type': 'application/json'
+                            'Content-Type': 'application/json'
                             // 'Content-Type': 'application/x-www-form-urlencoded',
                         },
                         body: JSON.stringify({
@@ -76,10 +76,16 @@ const getState = ({
                             "lastname": userlastName,
                         }) // body data type must match "Content-Type" header
                     })
+                    // .then((data) => {
+                    //     console.log(data)
+                    //     if (data.msg === "Ese email ya está registrado") {
+                    //         alert(data.msg)
+                    //     }
+                    // })
                     .catch((err) => console.log(err))
             },
             login: (userEmail, userPassword) => {
-                fetch('https://3000-luispiriz-proyecto23bui-cde0aqka4jj.ws-us84.gitpod.io/login', {
+                fetch('https://3000-luispiriz-proyecto24bac-5rbmfnqed4l.ws-us85.gitpod.io/login', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
@@ -142,35 +148,36 @@ const getState = ({
             },
             borrarFavorito: (favs) => {
                 const store = getStore()
-                setStore(
-                    {favoritos: store.favoritos.filter((item, i) => item !== favs)})
+                setStore({
+                    favoritos: store.favoritos.filter((item, i) => item !== favs)
+                })
             },
             cambiadorIndex: (laid) => {
                 let crazyNumber = 0;
-                if (laid==4) {
+                if (laid == 4) {
                     crazyNumber = "0";
-                }else if (laid==7) {
+                } else if (laid == 7) {
                     crazyNumber = "1";
-                }else if (laid==6) {
+                } else if (laid == 6) {
                     crazyNumber = "2";
-                }else if (laid==8) {
+                } else if (laid == 8) {
                     crazyNumber = "3";
-                }else if (laid==14) {
+                } else if (laid == 14) {
                     crazyNumber = "4";
-                }else if (laid==18) {
+                } else if (laid == 18) {
                     crazyNumber = "5";
-                }else if (laid==16) {
+                } else if (laid == 16) {
                     crazyNumber = "6";
-            }else if (laid==19) {
+                } else if (laid == 19) {
                     crazyNumber = "7";
-                }else if (laid==20) {
+                } else if (laid == 20) {
                     crazyNumber = "8";
-                }else {
+                } else {
                     crazyNumber = "9";
-                
+
                 }
                 return crazyNumber;
-                },
+            },
             changeColor: (index, color) => {
                 //get the store
                 const store = getStore();

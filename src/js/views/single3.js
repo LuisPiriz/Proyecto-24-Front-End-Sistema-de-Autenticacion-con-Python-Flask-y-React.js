@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
-import VehiclesInfo from "/workspace/Proyecto-19-StarwarsBlogReadingList/src/js/component/vehicles.json"
+import VehiclesInfo from "/workspace/Proyecto-24-Front-End-Sistema-de-Autenticacion-con-Python-Flask-y-React.js/src/js/component/vehicles.json"
 
 export const Single3 = (props) => {
   const { store, actions } = useContext(Context);
