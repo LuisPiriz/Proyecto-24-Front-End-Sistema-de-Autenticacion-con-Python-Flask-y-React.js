@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-import PlanetasInfo from "/workspace/Proyecto-24-Front-End-Sistema-de-Autenticacion-con-Python-Flask-y-React.js/src/js/component/planetas.json";
+import PlanetasInfo from "/workspace/Proyecto-24-StarWarsBlog-Front-End-Sistema-de-Autenticacion-con-Python-Flask-y-React.js/src/js/component/planetas.json";
 
 export const Single2 = (props) => {
   const { store, actions } = useContext(Context);
